@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter , Switch, Route, useParams} from "react-router-dom";
+import { MemoryRouter , Switch, Route, useParams} from "react-router-dom";
 import { Container } from '@material-ui/core';
 import { useStyles } from './styles.js';
 import PostPage from './PostPage';
@@ -21,7 +21,7 @@ const App = () => {
     return (
         <Container className={classes.blog}>
             <div className={classes.blogTitle}>My Blog Title</div>
-            <BrowserRouter>
+            <MemoryRouter>
                 <Switch>
                     <Route path="/:id">
                         <Post />
@@ -30,7 +30,7 @@ const App = () => {
                         <PostList />
                     </Route>
                 </Switch>
-            </BrowserRouter>
+            </MemoryRouter>
         </Container>
     )
 }
