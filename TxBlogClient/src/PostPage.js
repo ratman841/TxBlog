@@ -28,15 +28,15 @@ const PostPage = ({ index }) => {
 
     return (
         <div className={classes.post}>
-            <div className={classes.postAuthor}>By: {author}</div>
-            <div className={classes.postTitle}>{title}</div>
-            <div className={classes.postText}>{text}</div>
+            <div className={classes.postAuthor} data-testid={"author"}>By: {author}</div>
+            <div className={classes.postTitle} data-testid={"title"}>{title}</div>
+            <div className={classes.postText} data-testid={"text"}>{text}</div>
             <div className={classes.postComments}>
                 <div className={classes.postLink}>Comments</div>
                 {comments && comments.map(({ id, author, text }) => (
                     <div className={classes.postComment} key={id}>
-                        <div className={classes.commentAuthor}>{author}</div>
-                        <div className={classes.commentText}>{text}</div>
+                        <div className={classes.commentAuthor} data-testid={"comment-author"+id}>{author}</div>
+                        <div className={classes.commentText} data-testid={"comment-text"+id}>{text}</div>
                     </div>
                 ))}
             </div>

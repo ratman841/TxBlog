@@ -26,9 +26,9 @@ const PostsListPage = () => {
         <Grid container direction="column" justify="center" >
             {postsList && postsList.map(({ id, author, title, comments }) => (
                 <div className={classes.post} key={id}>
-                    <div className={classes.author}>{author}</div>
-                    <div><Link to={"/" + id} className={classes.title}>{title}</Link></div>
-                    <div className={classes.commentsNumber}>{comments.length} Comments</div>
+                    <div className={classes.author} data-testid={"author"}>{author}</div>
+                    <div><Link to={"/" + id} className={classes.title} data-testid={"title"}>{title}</Link></div>
+                    <div className={classes.commentsNumber} data-testid={"comments-number"}>{comments.length} Comments</div>
                 </div>
             ))}
         </Grid>
