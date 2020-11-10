@@ -7,6 +7,7 @@ const postsRepository = require("./PostsRepository");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.static('public'));
 
 app.get("/getAllPosts", (req, res) => {
     res.send(postsRepository.getAllPosts());
